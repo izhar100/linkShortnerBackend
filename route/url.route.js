@@ -23,7 +23,7 @@ urlRouter.post("/", async (req, res) => {
                         redirectURL: url,
                         date:Date.now()
                     })
-                    const fullURL = `${protocol}://${host}:${port}/${shortId}`
+                    const fullURL = `${protocol}://${host}/${shortId}`
                     return res.status(200).json({ url: fullURL }) 
                 }else{
                     return res.status(400).json({error:"url already taken please use different short name"})
@@ -36,7 +36,7 @@ urlRouter.post("/", async (req, res) => {
                     redirectURL: url,
                     date:Date.now()
                 })
-                const fullURL = `${protocol}://${host}:${port}/${shortId}`
+                const fullURL = `${protocol}://${host}/${shortId}`
                 res.status(200).json({ url: fullURL })
             }
         }
